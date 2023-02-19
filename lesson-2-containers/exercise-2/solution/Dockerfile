@@ -5,8 +5,6 @@ USER root
 
 ARG DB_USERNAME=$DB_USERNAME
 ARG DB_PASSWORD=$DB_PASSWORD
-# ENV DB_USERNAME $DB_USERNAME
-# ENV DB_PASSWORD $DB_PASSWORD
 
 RUN apt update -y && apt install postgresql postgresql-contrib -y
 
