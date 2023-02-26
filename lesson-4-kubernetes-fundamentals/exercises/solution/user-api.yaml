@@ -31,6 +31,18 @@ spec:
       - name: user-api
         image: isjustintime/cd12355-user-api:latest
         imagePullPolicy: Always
+        livenessProbe:
+          httpGet:
+            path: /health_check
+            port: 5151
+          initialDelaySeconds: 5
+          timeoutSeconds: 2
+        readinessProbe:
+          httpGet:
+            path: "/readiness_check"
+            port: 5151
+          initialDelaySeconds: 5
+          timeoutSeconds: 5
         env:
         - name: DB_USERNAME
           valueFrom:
