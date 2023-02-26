@@ -1,4 +1,17 @@
 apiVersion: v1
+kind: Service
+metadata:
+  name: user-api
+spec:
+  selector:
+    app.kubernetes.io/name: user-api
+  ports:
+  - name: "5152"
+    protocol: TCP
+    port: 5152
+    targetPort: 5152
+---
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: user-api
@@ -6,7 +19,7 @@ metadata:
     name: user-api
 spec:
   replicas: 1
-  selectors:
+  selector:
     matchLabels:
       service: user-api
   template:
@@ -30,16 +43,3 @@ spec:
               name: db-secret
               key: DB_PASSWORD
       restartPolicy: Always
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: user-api
-spec:
-  selector:
-    name: user-api
-  ports:
-  - name: "5152"
-    protocol: TCP
-    port: 5152
-    targetPort: 5152
