@@ -1,3 +1,4 @@
+import logging
 import os
 
 from datetime import datetime, timedelta
@@ -15,6 +16,17 @@ port_number = int(os.environ.get("APP_PORT", 5152))
 @app.route("/health_check")
 def health_check():
     return "ok"
+
+
+@app.route("/readiness_check")
+def readiness_check():
+    try:
+        count = db.session.query(User).count()
+    except Exception as e:
+        logging.error(e)
+        return "failed", 500
+    else:
+        return "ok"
 
 
 @app.route("/api/users/<user_id>/tokens", methods=["POST"])
