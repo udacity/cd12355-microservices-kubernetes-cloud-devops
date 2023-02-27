@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: user-api
-        image: isjustintime/cd12355-user-api:0.0.3
+        image: isjustintime/cd12355-user-api:0.0.4
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
