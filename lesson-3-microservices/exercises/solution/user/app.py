@@ -23,7 +23,7 @@ def readiness_check():
     try:
         count = db.session.query(User).count()
     except Exception as e:
-        logging.error(e)
+        app.logger.error(e)
         return "failed", 500
     else:
         return "ok"

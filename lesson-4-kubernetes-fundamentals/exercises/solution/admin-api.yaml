@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: admin-api
-        image: isjustintime/cd12355-admin-api:latest
+        image: isjustintime/cd12355-admin-api:0.0.3
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
@@ -54,4 +54,6 @@ spec:
             secretKeyRef:
               name: db-secret
               key: DB_PASSWORD
+        - name: DB_HOST
+          value: app-db
       restartPolicy: Always
