@@ -78,7 +78,7 @@ def all_user_visits():
 
 
 scheduler = BackgroundScheduler()
-job = scheduler.add_job(get_daily_visits, 'interval', seconds=5)
+job = scheduler.add_job(get_daily_visits, 'interval', seconds=30)
 scheduler.start()
 
 if __name__ == "__main__":
