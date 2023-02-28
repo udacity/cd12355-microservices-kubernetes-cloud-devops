@@ -1,5 +1,5 @@
-# Coworking Service Extension
-The Coworking Service is a set of APIs that enables users to request one-time tokens and administrators to authorize access. This service follows a microservice pattern and the APIs are split into distinct services that can be deployed and managed independently of one another.
+# Coworking Space Service Extension
+The Coworking Space Service is a set of APIs that enables users to request one-time tokens and administrators to authorize access to a coworking space. This service follows a microservice pattern and the APIs are split into distinct services that can be deployed and managed independently of one another.
 
 For this project, you are a DevOps engineer who will be collaborating with a team that is building an API for business analysts. The API provides business analysts basic analytics data on user activity in the service. The application they provide you functions as expected locally and you are expected to help build a pipeline to deploy it in Kubernetes.
 
@@ -115,3 +115,4 @@ The benefit here is that it's explicitly set. However, note that the `DB_PASSWOR
 5. Screenshot of `kubectl get pods`
 6. All Kubernetes config files used for deployment (ie YAML files)
 7. Screenshot of AWS CloudWatch logs for the application
+8. `README.md` file in your solution that serves as documentation for your user to detail how your deployment process works and how the user can deploy changes.
