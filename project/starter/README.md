@@ -111,8 +111,10 @@ The benefit here is that it's explicitly set. However, note that the `DB_PASSWOR
 1. `Dockerfile`
 2. Screenshot of AWS CodeBuild pipeline
 3. Screenshot of AWS ECR repository for the application's repository
-4. Screenshot of `kubectl svc`
+4. Screenshot of `kubectl get svc`
 5. Screenshot of `kubectl get pods`
-6. All Kubernetes config files used for deployment (ie YAML files)
-7. Screenshot of AWS CloudWatch logs for the application
-8. `README.md` file in your solution that serves as documentation for your user to detail how your deployment process works and how the user can deploy changes.
+6. Screenshot of `kubectl describe svc <DATABASE_SERVICE_NAME>`
+7. Screenshot of `kubectl describe deployment <SERVICE_NAME>`
+8. All Kubernetes config files used for deployment (ie YAML files)
+9. Screenshot of AWS CloudWatch logs for the application
+10. `README.md` file in your solution that serves as documentation for your user to detail how your deployment process works and how the user can deploy changes.
