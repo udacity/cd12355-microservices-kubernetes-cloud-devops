@@ -102,7 +102,7 @@ The benefit here is that it's explicitly set. However, note that the `DB_PASSWOR
 
 ## Project Instructions
 1. Set up a Postgres database with a Helm Chart
-2. Create a `Dockerfile` for the Python application
+2. Create a `Dockerfile` for the Python application. Use a base image that is Python-based.
 3. Write a simple build pipeline with AWS CodeBuild to build and push a Docker image into AWS ECR
 4. Create a service and deployment using Kubernetes configuration files to deploy the application
 5. Check AWS CloudWatch for application logs
@@ -118,3 +118,10 @@ The benefit here is that it's explicitly set. However, note that the `DB_PASSWOR
 8. All Kubernetes config files used for deployment (ie YAML files)
 9. Screenshot of AWS CloudWatch logs for the application
 10. `README.md` file in your solution that serves as documentation for your user to detail how your deployment process works and how the user can deploy changes.
+
+### Stand Out Suggestions
+Please provide up to 3 sentences for each suggestion. Additional content in your submission from the standout suggestions do _not_ impact the length of your total submission.
+1. Specify reasonable Memory and CPU allocation in the Kubernetes deployment configuration
+2. In your README, specify what AWS instance type would be best used for the application? Why?
+3. In your README, provide your thoughts on how we can save on costs?
+
