@@ -1,11 +1,12 @@
-# docker build . --build-arg AUTHOR=justin -t demo_args
-# docker run demo_args -e "hi there"
+# docker build . --build-arg BUILD_NUMBER="4"
+# docker run -e WORDS="hello there" <IMAGE_ID>
 
 FROM python:3.10-slim-buster
 
-ARG AUTHOR
-ENV WORDS=$WORDS
+ARG BUILD_NUMBER
 
-RUN echo "print('$BUILD_NUMBER: $WORDS')" > /say_something.py
+RUN echo "import os" > /say_something.py
+RUN echo "print('Build Number: $BUILD_NUMBER')" >> /say_something.py
+RUN echo "print(os.getenv('WORDS'))" >> /say_something.py
 
 ENTRYPOINT python /say_something.py
