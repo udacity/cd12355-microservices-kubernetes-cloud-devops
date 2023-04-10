@@ -2,8 +2,8 @@
 
 * Run the commands (replace `my-repo` and `my-release` with applicable names)
 ```bash
-helm repo add my-repo https://charts.bitnami.com/bitnami
-helm install my-release my-repo/redis
+helm repo add demo-redis https://charts.bitnami.com/bitnami
+helm install --set master.persistence.enabled=false --set replica.replicaCount=1 --set replica.persistence.enabled=false demo-redis demo-repo/redis
 ```
 
 * This will show the Redis pod being created
@@ -40,5 +40,5 @@ GET helm_chart_exercise
 
 * Cleanup
 ```bash
-helm delete my-release
+helm delete demo-redis
 ```

@@ -6,6 +6,9 @@ The starter code contains a microservice application. It is deployed as 3 distin
 You are given examples of deployment and service configurations in the starter code. For this exercise, you are to create and apply the Kubernetes service and deployment for the user API.
 
 ## Instructions
+### 0. Provision Enough Nodes In Your Cluster
+Depending on the instance types used in your cluster, your may need to provision more nodes for the pods to have enough resources to run. If you have lightweight EC2 instances running in your EKS cluster, I recommend increasing the maximum size of your Node Group to 4 nodes.
+
 ### 1. Apply the Existing Configs
 Create the resources in your Kubernetes environment. Multiple deployments can be applied by running:
 ```bash

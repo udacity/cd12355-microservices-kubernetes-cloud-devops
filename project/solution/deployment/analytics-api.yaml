@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: analytics-api
-        image: isjustintime/cd12355-analytics-api:0.0.4
+        image: isjustintime/cd12355-analytics-api:0.1.0
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
