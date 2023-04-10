@@ -15,7 +15,7 @@ Once you're done with the exercise, I recommend scaling back the capacity of you
 Reference the following documentation to set up your Redis deployment using a Helm chart: https://artifacthub.io/packages/helm/bitnami/redis
 
 Redis deployments can be complicated. In order to simplify Redis in this exercise:
-* Set both the master and persistence to use no persistence
+* Set both the master and replica to use no persistence
 * Set the replica count to 0
 
 (Hint: the following flags are used to simplify your deployment)
@@ -32,7 +32,7 @@ Run `kubectl get pods`. You should see Redis pods have been configured.
 ### 3. (Optional) Query Against Redis
 * Retrieve the password
 ```bash
-export REDIS_PASSWORD=$(kubectl get secret --namespace default redis -o jsonpath="{.data.redis-password}" | base64 -d)
+export REDIS_PASSWORD=$(kubectl get secret --namespace default demo-redis -o jsonpath="{.data.redis-password}" | base64 -d)
 ```
 
 * Connect to the Redis pod named `redis-master-?` so we can use the `redis-cli` tool without having to install it locally (simplifies the dependencies to run this exercise)
